@@ -87,12 +87,9 @@ isolate(av <- anova(aov(YLD[tmp]~Treatment[tmp], data=values)))
 	},include.rownames=TRUE)
 output$HSD <- renderPlot({
 		# Generate a new Tukey plot
-values <- data.frame(values[c(1:input$slider1,101:(100+input$slider1),201:(200+input$slider1),301:(300+input$slider1),401:(400+input$slider1),501:(500+input$slider1)),])
-tmp <- data.frame(values$Treatment == 1:input$slider2)
-tmp$Treatment<-factor(tmp$Treatment)
-
-		isolate(av <- aov(YLD~Treatment, data=tmp))
-	isolate(HSD <- plot(TukeyHSD(av,ordered=TRUE, conf.level=0.95)))	
+		
+		av <- aov(YLD[values$Treatment == 1:input$slider2]~Treatment[values$Treatment == 1:input$slider2], data=values)
+	isolate(HSD <- plot(TukeyHSD(av,ordered=TRUE, conf.level=0.95,xlab = "Treatments")))	
 		
 		})
     })
