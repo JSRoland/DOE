@@ -14,7 +14,7 @@ sliderInput("slider1", label = h3("Number of replicates: "),
         min = 0, max = 100, value = 50),
 		
 sliderInput("slider2", label = h3("Number of treatments: "),
-		min = 1, max = 5, value = 3),
+		min = 1, max = 5, value = 3)
 		
 ),
 	
