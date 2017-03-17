@@ -62,7 +62,7 @@ shinyServer(function(input, output){
 		}
 		
 		
-          # Create Yield
+          # Create Yield (Ike's equation)
           YLD <- sqrt(abs(15*(2-(A-1)^2-(F-1)^2))) + 15*(B)^2*exp(0.64-(B)^2-10*(B-G)^2) + 50*C*exp(0.04-(C)^2-10*(6*C-H)^2) + 0.5*D*E + 5*abs(I-K) + (J)^2 + (M)^2 - (J*M) + 10*exp(-100*((0.72*L-1.3)^2+(N-1.3)^2)) + rnorm(1,0,1)
           
           # create the new line to be added from your inputs

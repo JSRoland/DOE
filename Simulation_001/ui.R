@@ -16,10 +16,7 @@ sliderInput("slider1", label = h3("Number of replicates: "),
 sliderInput("slider2", label = h3("Number of treatments: "),
 		min = 1, max = 5, value = 3),
 		
-checkboxInput("check1", label = "Use persistent treatments", value = FALSE),
-
-actionButton("button1", "Run Experiment", icon=icon("play")
-	)),
+),
 	
     mainPanel(tableOutput("av"),
 	plotOutput("HSD")
